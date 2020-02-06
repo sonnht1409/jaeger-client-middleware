@@ -1,6 +1,7 @@
 # Jaeger Client Middleware for NodeJS
 
 A middleware for NodeJS support jaeger-client-nodejs
+
 NodeJS 10.x recommended
 
 ```bash
