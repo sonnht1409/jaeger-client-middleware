@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/sonnht1409/jaeger-client-middleware.git"
   },
-  "keywords": [],
+  "keywords": ["jaeger","middleware"],
   "author": "sonnht1409",
   "license": "ISC",
   "dependencies": {
