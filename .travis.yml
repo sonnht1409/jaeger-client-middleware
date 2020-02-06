@@ -1,7 +1,12 @@
 language: node_js
-node_js:
-  - '10'
-  - '12'
+node_js: "10.17"
+
+before_install:
+  - pwd
+  - echo $TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER
+after_script:
+  - echo $TRAVIS_BRANCH-$TRAVIS_BUILD_NUMBER
+
 branches:
   only:
     - master
