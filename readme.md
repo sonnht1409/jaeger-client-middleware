@@ -1,6 +1,7 @@
 # Jaeger Client Middleware for NodeJS
 
 A middleware for NodeJS support jaeger-client-nodejs
+NodeJS 10.x recommended
 
 ```bash
 npm i jaeger-client-middleware
@@ -8,12 +9,15 @@ npm i jaeger-client-middleware
 
 ## Before Setup
 
+This package is a middleware version of jaeger-client-nodejs, without jaeger setup this package has no effect.
 Please read these references:
 
 - Ref:
 
   -- jaeger-client for NodeJS `https://github.com/jaegertracing/jaeger-client-node`
+
   -- jaeger tracing for local run `https://www.jaegertracing.io/docs/1.16/getting-started`
+
   -- jaeger tracing for production `https://www.jaegertracing.io/docs/1.16/deployment`
 
 ## How to use
@@ -81,8 +85,9 @@ export default initTracer(config, options);
 `middlewares/jaeger-middleware.js`
 
 ```javascript
-const jaeger = require("path-to-lib/jaeger.js");
-const JaegerMiddleware = require("jaeger-client-nodejs");
+
+const jaeger = require("path-to-libs/jaeger.js");
+const JaegerMiddleware = require("jaeger-client-middleware");
 const jaegerMiddleware = new JaegerMiddleware(jaeger);
 module.exports = jaegerMiddleware;
 ```
@@ -106,6 +111,9 @@ After created, your structure should look like
 
 ```javascript
 const jaegerMiddleware = require("path-to-middleware/jaeger-middleware.js");
+
+// assume you are using express
+const app = require('express')();
 app.use(
   jaegerMiddleware.handleLogBeforeResponse,
   jaegerMiddleware.createSpanAfterReceivedRequest
