@@ -122,3 +122,11 @@ app.use(
   jaegerMiddleware.createSpanAfterReceivedRequest
 );
 ```
+
+### 4. Inject request header before sending request
+
+```javascript
+const jaegerMiddleware = require("path-to-middleware/jaeger-middleware.js");
+const injectedHeader = jaegerMiddleware.buildHeaderForHTTPRequest(yourHeaderObject)
+// now use injected header for your request
+```

@@ -113,15 +113,9 @@ class JaegerMiddleware {
     return newSpan;
   }
 
-  buildHeaderForHTTPRequest(path, headers = {}) {
+  buildHeaderForHTTPRequest(headers = {}) {
     const spanContext = getContext();
     this._jaeger.inject(spanContext, FORMAT_HTTP_HEADERS, headers);
-    return headers;
-  }
-
-  buildHeaderBeforePublishMessage(destination, headers = {}) {
-    const spanContext = getContext();
-    this._jaeger.inject(spanContext, FORMAT_TEXT_MAP, headers);
     return headers;
   }
 
