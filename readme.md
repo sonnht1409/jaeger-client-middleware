@@ -1,6 +1,7 @@
 # Jaeger Client Middleware for NodeJS
 
 [![Build Status](https://travis-ci.com/sonnht1409/jaeger-client-middleware.svg?branch=master)](https://travis-ci.com/sonnht1409/jaeger-client-middleware)
+![Node.js CI](https://github.com/sonnht1409/jaeger-client-middleware/workflows/Node.js%20CI/badge.svg?branch=master)
 
 A middleware for NodeJS support jaeger-client-nodejs
 
